@@ -19,10 +19,54 @@ let buttonarray = Array.from(buttons);
 //     console.log(btn);
 // })
 //arrow function short function
-buttonarray.forEach(btn=>{
-    // console.log(btn);
-    // here we have all the buttons so we will add event on buttons all
-    btn.addEventListener('click',function(event){
-        console.log(event.target);
-    });
+
+
+// buttonarray.forEach(btn=>{
+//     console.log(btn);
+//     btn.addEventListener('click',function(event){
+//         console.log(event.target.innerHTML);
+//     });
+
+// });
+
+// here we have all the buttons so we will add event on buttons all
+
+
+
+// we apllied listner add one okay event is about when it clicks then play a function about event get in console event when we console event all data will come here .target specify that a specific button or element
+
+// here after all we are getting complete tags with elements so we want inner html inner text so its very simple after target .innerhtml or inner txt 
+//  let string = '';
+// buttonarray.forEach(btn=>{
+// btn.addEventListener('click',(e)=>{
+//     string += e.target.innerHTML;
+//     // when we enter a value so one removes to add another just add one thing +=
+//     display.value=string;
+//     console.log(e.target.innerHTML);})
+// });
+
+// now all the data goes to console but we want this in input
+
+// for that we need to create a new empty variable where we will store all this data 
+
+// data = e.target.innerHTML;
+//display.value = string;
+
+// here we will run complete funtion for operators
+
+let string = '';
+buttonarray.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+        if (e.target.innerHTML == 'DEL') {
+            string = string.substring(0, string.length - 1);
+            display.value = string;
+        }
+        else{
+            string += e.target.innerHTML;
+            display.value=string;
+        }
+    })
 });
+
+
+

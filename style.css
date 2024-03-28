@@ -33,6 +33,7 @@ input {
     border: 2px solid black;
     border-radius: 16px;
     outline: none;
+    color: #ffff;
 }
 
 input::placeholder {
