@@ -49,3 +49,18 @@ button{
     border: 1px solid black;
     cursor: pointer;
 }
+.ac,.del{
+    font-size:20px ;
+}
+button:hover{
+    color: white;
+    background-color: #f67c14;
+    border: 1px solid #f67c14;
+}
+.equal{
+    background: #f67c14;
+    border: #f67c14;
+}
+.operators{
+    color: #f67c14;
+}
