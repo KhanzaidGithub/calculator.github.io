@@ -6,7 +6,7 @@ let display = document.getElementById('inputbox');
 let buttons = document.querySelectorAll('button');
 let buttonarray = Array.from(buttons);
 // console.log(buttons);
-//array.from this will convert nodelists inot arrya form
+//array.from this will convert nodelists to array form
 
 // console.log(buttonarray);
 
@@ -18,6 +18,7 @@ let buttonarray = Array.from(buttons);
 // buttonarray.forEach(function(btn){
 //     console.log(btn);
 // })
+
 //arrow function short function
 
 
@@ -36,11 +37,13 @@ let buttonarray = Array.from(buttons);
 // we apllied listner add one okay event is about when it clicks then play a function about event get in console event when we console event all data will come here .target specify that a specific button or element
 
 // here after all we are getting complete tags with elements so we want inner html inner text so its very simple after target .innerhtml or inner txt 
+
 //  let string = '';
 // buttonarray.forEach(btn=>{
 // btn.addEventListener('click',(e)=>{
 //     string += e.target.innerHTML;
 //     // when we enter a value so one removes to add another just add one thing +=
+
 //     display.value=string;
 //     console.log(e.target.innerHTML);})
 // });
@@ -49,7 +52,7 @@ let buttonarray = Array.from(buttons);
 
 // for that we need to create a new empty variable where we will store all this data 
 
-// data = e.target.innerHTML;
+// string = e.target.innerHTML;
 //display.value = string;
 
 // here we will run complete funtion for operators
@@ -61,9 +64,18 @@ buttonarray.forEach(btn => {
             string = string.substring(0, string.length - 1);
             display.value = string;
         }
-        else{
+        else if (e.target.innerHTML == 'AC') {
+            string = '';
+            display.value = string;
+        }
+        else if (e.target.innerHTML == '=') {
+            //here we hvae one method that is eval to convert code to string 
+            string = eval(string);
+            display.value = string;
+        }
+        else {
             string += e.target.innerHTML;
-            display.value=string;
+            display.value = string;
         }
     })
 });
