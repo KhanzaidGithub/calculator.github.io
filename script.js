@@ -60,7 +60,7 @@ let buttonarray = Array.from(buttons);
 let string = '';
 buttonarray.forEach(btn => {
     btn.addEventListener('click', (e) => {
-        if (e.target.innerHTML == 'DEL') {
+        if (e.target.innerText == 'DEL') {
             string = string.substring(0, string.length - 1);
             display.value = string;
         }
@@ -70,8 +70,15 @@ buttonarray.forEach(btn => {
         }
         else if (e.target.innerHTML == '=') {
             //here we hvae one method that is eval to convert code to string 
-            string = eval(string);
-            display.value = string;
+
+            try {
+                display.value = string;
+                string = eval(string);
+            }
+            catch (error) {
+                display.value = "Error";
+            }
+
         }
         else {
             string += e.target.innerHTML;
@@ -79,6 +86,3 @@ buttonarray.forEach(btn => {
         }
     })
 });
-
-
-
